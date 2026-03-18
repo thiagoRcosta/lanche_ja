@@ -5,9 +5,12 @@
 ![State Management](https://img.shields.io/badge/State%20Management-Provider-purple)
 ![Networking](https://img.shields.io/badge/Networking-Dio-orange)
 
-### Aplicativo mobile de delivery desenvolvido em Flutter com foco em boas práticas de arquitetura, organização modular e escalabilidade.
+### Aplicativo mobile para pedidos e controle de restaurantes, desenvolvido em Flutter com foco em boas práticas de arquitetura, organização modular e escalabilidade.
 
 O objetivo do projeto é demonstrar boas práticas de engenharia de software aplicadas ao desenvolvimento mobile, incluindo separação de responsabilidades, modularização e organização escalável de código.
+
+## O Projeto
+O Lanche Já é um sistema multiplataforma para restaurantes, criado para agilizar pedidos e o controle de comandas. A interface é dividida em duas áreas principais: a do cliente, onde os usuários podem fazer pedidos, visualizar o cardápio, acompanhar valores totais e realizar avaliações; e a do restaurante, voltada à gestão de comandas e pedidos pela equipe. A experiência do cliente possui um design moderno e intuitivo, pensado para smartphones, enquanto a interface do restaurante é otimizada para eficiência e praticidade em telas maiores, como desktops.
 
 ## Arquitetura
 O projeto utiliza o padrão MVVM (Model – View – ViewModel) para separar responsabilidades entre interface, lógica de apresentação e modelo de dados.
