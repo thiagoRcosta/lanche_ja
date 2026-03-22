@@ -36,7 +36,7 @@ O projeto utiliza o padrão **MVVM (Model – View – ViewModel)** para separar
 View → ViewModel → Service → API
 
 # Gerenciamento de Estado
-O gerenciamento de estado é implementado utilizando **Provider** em conjunto com **ChangeNotifier**, seguindo o padrão arquitetural **MVVM**.
+O gerenciamento de estado é implementado utilizando **ChangeNotifier** em conjunto com **Provider**, seguindo o padrão arquitetural **MVVM**.
 
 - **Provider** é utilizado para injeção de dependências e exposição dos ViewModels na árvore de widgets.
 - **ChangeNotifier** é utilizado nos ViewModels para gerenciar o estado da aplicação e notificar a interface quando ocorrem mudanças.
@@ -93,7 +93,7 @@ Exemplos:
 # Tecnologias Utilizadas
 - **Flutter** — Framework para desenvolvimento de aplicativos móveis multiplataforma  
 - **Dart** — Linguagem de programação utilizada pelo Flutter  
-- **Provider + ChangeNotifier** — Gerenciamento de estado reativo e injeção de dependências
+- **Provider + ChangeNotifier** — Injeção de dependências e gerenciamento de estado reativo
 - **Dio** — Cliente HTTP para comunicação com APIs  
 
 # Como executar o projeto
