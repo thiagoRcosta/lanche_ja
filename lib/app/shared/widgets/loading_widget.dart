@@ -8,11 +8,16 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: implementar loading personalizado
-
-    return CircularProgressIndicator(
-      strokeWidth: strokeWidth ?? 4.0,
-      color: color ?? Colors.black,
-    );
+    if (Theme.of(context).brightness == Brightness.dark) {
+      return Image.asset(
+        'assets/images/dark_loading.gif',
+        width: 80,
+      );
+    } else {
+      return Image.asset(
+        'assets/images/light_loading.gif',
+        width: 80,
+      );
+    }
   }
 }

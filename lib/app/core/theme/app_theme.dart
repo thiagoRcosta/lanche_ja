@@ -9,7 +9,7 @@ class AppTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.darkBackground,
-      primaryColor: AppColors.primary,
+      primaryColor: AppColors.white,
 
       iconTheme: const IconThemeData(
         color: AppColors.darkIcon,
@@ -46,7 +46,7 @@ class AppTheme {
     return ThemeData(
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.lightBackground,
-      primaryColor: AppColors.primary,
+      primaryColor: AppColors.black,
 
       iconTheme: const IconThemeData(
         color: AppColors.lightIcon,
