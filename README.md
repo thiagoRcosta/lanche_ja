@@ -7,7 +7,7 @@
 
 ### Aplicativo mobile para pedidos e controle de restaurantes, desenvolvido em Flutter com foco em boas práticas de arquitetura, organização modular e escalabilidade.
 
-O objetivo do projeto é demonstrar boas práticas de engenharia de software aplicadas ao desenvolvimento mobile, incluindo separação de responsabilidades, modularização e organização escalável de código.
+O objetivo do projeto é desenvolver uma aplicação real implementando boas práticas de engenharia de software aplicadas ao desenvolvimento mobile, incluindo separação de responsabilidades, modularização e organização escalável de código.
 
 # O Projeto
 O **Lanche Já** é um sistema multiplataforma para restaurantes, criado para agilizar pedidos e o controle de comandas.

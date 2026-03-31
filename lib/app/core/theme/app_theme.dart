@@ -10,6 +10,20 @@ class AppTheme {
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.darkBackground,
       primaryColor: AppColors.white,
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.darkBackground,
+        elevation: 0,
+        titleTextStyle: AppTextStyles.titleMedium.copyWith(
+          color: AppColors.white,
+        ),
+      ),
+
+      cardTheme: CardThemeData(
+        color: AppColors.darkSurface,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
 
       iconTheme: const IconThemeData(
         color: AppColors.darkIcon,
@@ -34,6 +48,7 @@ class AppTheme {
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.black,
+          disabledBackgroundColor: AppColors.darkSurface,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
@@ -47,6 +62,19 @@ class AppTheme {
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.lightBackground,
       primaryColor: AppColors.black,
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.lightBackground,
+        elevation: 0,
+        titleTextStyle: AppTextStyles.titleMedium.copyWith(
+          color: AppColors.black,
+        ),
+      ),
+      cardTheme: CardThemeData(
+        color: AppColors.lightSurface,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
 
       iconTheme: const IconThemeData(
         color: AppColors.lightIcon,
@@ -71,6 +99,7 @@ class AppTheme {
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.black,
+          disabledBackgroundColor: AppColors.lightSurface,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
