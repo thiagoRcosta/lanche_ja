@@ -4,6 +4,7 @@ class AppColors {
   AppColors._();
 
   static const primary = Color(0xFFFFC107);
+  static const primaryDisabled = Color(0xFFD59C00);
   static const black = Color(0xFF000000);
   static const white = Color(0xFFFFFFFF);
 

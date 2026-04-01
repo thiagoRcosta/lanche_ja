@@ -1,50 +1,83 @@
 import 'package:flutter/material.dart';
+import 'package:lanche_ja/app/features/product/viewmodels/product_view_model.dart';
+import 'package:provider/provider.dart';
+
 import 'package:lanche_ja/app/core/theme/app_theme.dart';
+
 import 'package:lanche_ja/app/shared/widgets/app_button.dart';
 import 'package:lanche_ja/app/shared/widgets/app_error.dart';
-import 'package:lanche_ja/app/shared/widgets/app_product_card.dart';
 import 'package:lanche_ja/app/shared/widgets/app_text_button.dart';
 import 'package:lanche_ja/app/shared/widgets/app_loading.dart';
+
+import 'package:lanche_ja/app/features/product/widgets/app_product_card.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Lanche Já',
-      theme: AppTheme.darkTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Teste de Widgets'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ProductViewModel(),
         ),
-        body: SafeArea(
-          child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            children: [
-              AppButton(
-                onPressed: () {},
-                icon: Icons.shopping_cart,
-                text: 'Teste',
-              ),
-              const SizedBox(height: 20),
-              AppProductCard(
-                image: 'assets/images/x_salada.png',
-                title: 'X-Salada',
-                description: 'Acompanha Fritas e molho da casa',
-                price: 18.99,
-              ),
-              const SizedBox(height: 20),
-              const AppErrorWidget(
-                message: 'Ops, algo deu errado!',
-              ),
-              const SizedBox(height: 20),
-              AppTextButton(text: 'Botão de teste', onPressed: () {}),
-              const SizedBox(height: 20),
-              LoadingWidget(),
-            ],
+      ],
+      child: MaterialApp(
+        title: 'Lanche Já',
+        theme: AppTheme.darkTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Teste de Widgets'),
+          ),
+          body: SafeArea(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              children: [
+                AppButton(
+                  onPressed: () {},
+                  icon: Icons.shopping_cart,
+                  text: 'Teste',
+                ),
+
+                const SizedBox(height: 20),
+
+                const AppProductCard(
+                  image: 'assets/images/x_salada.png',
+                  title: 'X-Salada',
+                  description: 'Acompanha Fritas e molho da casa',
+                  price: 18.99,
+                ),
+
+                const SizedBox(height: 20),
+
+                AppProductCard(
+                  image: 'assets/images/cheddar.png',
+                  title: 'Duplo Cheddar',
+                  description: 'Acompanha Fritas e molho da casa',
+                  price: 20.99,
+                  backgroundSwitch: true,
+                ),
+
+                const SizedBox(height: 20),
+
+                const AppErrorWidget(
+                  message: 'Ops, algo deu errado!',
+                ),
+
+                const SizedBox(height: 20),
+
+                AppTextButton(
+                  text: 'Botão de teste',
+                  onPressed: () {},
+                ),
+
+                const SizedBox(height: 20),
+
+                const LoadingWidget(),
+              ],
+            ),
           ),
         ),
       ),

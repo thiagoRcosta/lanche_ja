@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lanche_ja/app/core/theme/app_colors.dart';
+import 'package:lanche_ja/app/features/product/viewmodels/product_view_model.dart';
+import 'package:provider/provider.dart';
+
 import 'package:lanche_ja/app/core/theme/app_text_styles.dart';
-import 'package:lanche_ja/app/shared/widgets/add_to_cart_component.dart';
+import 'package:lanche_ja/app/features/product/widgets/add_to_cart_component.dart';
 
 class AppProductCard extends StatelessWidget {
   final String image;
   final String title;
   final String? description;
   final double price;
+  final bool? backgroundSwitch;
 
   const AppProductCard({
     super.key,
@@ -16,6 +19,37 @@ class AppProductCard extends StatelessWidget {
     required this.title,
     this.description,
     required this.price,
+    this.backgroundSwitch,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => ProductViewModel(),
+      child: _ProductCardContent(
+        image: image,
+        title: title,
+        description: description,
+        price: price,
+        backgroundSwitch: backgroundSwitch,
+      ),
+    );
+  }
+}
+
+class _ProductCardContent extends StatelessWidget {
+  final String image;
+  final String title;
+  final String? description;
+  final double price;
+  final bool? backgroundSwitch;
+
+  const _ProductCardContent({
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.price,
+    this.backgroundSwitch,
   });
 
   @override
@@ -24,9 +58,12 @@ class AppProductCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
       ),
+      color: backgroundSwitch == true
+          ? Theme.of(context).highlightColor
+          : Theme.of(context).cardColor,
       elevation: 0,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Row(
           children: [
             Flexible(
@@ -36,7 +73,9 @@ class AppProductCard extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(width: 16.0),
+
+            const SizedBox(width: 16),
+
             Flexible(
               flex: 8,
               child: Column(
@@ -53,7 +92,9 @@ class AppProductCard extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                     ),
                   ),
-                  const SizedBox(height: 10.0),
+
+                  const SizedBox(height: 10),
+
                   if (description != null) ...[
                     Text(
                       description!,
@@ -62,23 +103,27 @@ class AppProductCard extends StatelessWidget {
                       style: AppTextStyles.bodySmall,
                     ),
                   ],
-                  const SizedBox(height: 8.0),
-                  Divider(height: 10.0),
+                  const SizedBox(height: 6),
+
+                  const Divider(height: 12),
+
                   Text(
                     NumberFormat.currency(
                       locale: 'pt_BR',
                       symbol: 'R\$',
                     ).format(price),
-                    style: AppTextStyles.bodyLarge.copyWith(
+                    style: AppTextStyles.titleSmall.copyWith(
                       fontWeight: FontWeight.w800,
-                      color: AppColors.primary,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(width: 16.0),
-            Expanded(
+
+            const SizedBox(width: 16),
+
+            const Expanded(
               flex: 2,
               child: AddToCartComponent(),
             ),
