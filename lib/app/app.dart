@@ -9,7 +9,7 @@ import 'package:lanche_ja/app/shared/widgets/app_error.dart';
 import 'package:lanche_ja/app/shared/widgets/app_text_button.dart';
 import 'package:lanche_ja/app/shared/widgets/app_loading.dart';
 
-import 'package:lanche_ja/app/features/product/widgets/app_product_card.dart';
+import 'package:lanche_ja/app/features/product/widgets/app_product_card_list.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -43,7 +43,7 @@ class App extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                const AppProductCard(
+                const AppProductCardList(
                   image: 'assets/images/x_salada.png',
                   title: 'X-Salada',
                   description: 'Acompanha Fritas e molho da casa',
@@ -52,7 +52,7 @@ class App extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                AppProductCard(
+                const AppProductCardList(
                   image: 'assets/images/cheddar.png',
                   title: 'Duplo Cheddar',
                   description: 'Acompanha Fritas e molho da casa',
