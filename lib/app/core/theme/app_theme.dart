@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lanche_ja/app/core/theme/app_colors.dart';
 import 'package:lanche_ja/app/core/theme/app_text_styles.dart';
+import 'package:lanche_ja/app/core/theme/app_theme_extension.dart';
 
 class AppTheme {
   AppTheme._();
@@ -18,7 +19,11 @@ class AppTheme {
           color: AppColors.white,
         ),
       ),
-
+      extensions: const [
+        AppThemeExtension(
+          menu: AppColors.darkMenu,
+        ),
+      ],
       cardTheme: CardThemeData(
         color: AppColors.darkSurface,
         shape: RoundedRectangleBorder(
@@ -71,6 +76,11 @@ class AppTheme {
           color: AppColors.black,
         ),
       ),
+      extensions: const [
+        AppThemeExtension(
+          menu: AppColors.lightMenu,
+        ),
+      ],
       cardTheme: CardThemeData(
         color: AppColors.lightSurface,
         shape: RoundedRectangleBorder(
