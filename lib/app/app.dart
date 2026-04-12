@@ -37,7 +37,12 @@ class App extends StatelessWidget {
             children: [
               SafeArea(
                 child: ListView(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: const EdgeInsets.only(
+                    left: 16.0,
+                    right: 16.0,
+                    top: 16.0,
+                    bottom: 64.0,
+                  ),
                   children: [
                     AppButton(
                       onPressed: () {},

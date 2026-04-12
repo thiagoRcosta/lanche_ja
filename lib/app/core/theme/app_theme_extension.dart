@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lanche_ja/app/core/theme/app_menu_theme.dart';
 
 class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
-  final Color menu;
+  final AppMenuTheme menu;
 
   const AppThemeExtension({
     required this.menu,
@@ -9,7 +10,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
 
   @override
   AppThemeExtension copyWith({
-    Color? menu,
+    AppMenuTheme? menu,
   }) {
     return AppThemeExtension(
       menu: menu ?? this.menu,
@@ -24,7 +25,11 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     if (other is! AppThemeExtension) return this;
 
     return AppThemeExtension(
-      menu: Color.lerp(menu, other.menu, t)!,
+      menu: AppMenuTheme(
+        background: Color.lerp(menu.background, other.menu.background, t)!,
+        icon: Color.lerp(menu.icon, other.menu.icon, t)!,
+        iconActive: Color.lerp(menu.iconActive, other.menu.iconActive, t)!,
+      ),
     );
   }
 }

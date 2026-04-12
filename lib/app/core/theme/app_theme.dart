@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lanche_ja/app/core/theme/app_colors.dart';
+import 'package:lanche_ja/app/core/theme/app_menu_theme.dart';
 import 'package:lanche_ja/app/core/theme/app_text_styles.dart';
 import 'package:lanche_ja/app/core/theme/app_theme_extension.dart';
 
@@ -21,7 +22,11 @@ class AppTheme {
       ),
       extensions: const [
         AppThemeExtension(
-          menu: AppColors.darkMenu,
+          menu: AppMenuTheme(
+            background: AppColors.darkMenu,
+            icon: AppColors.darkIcon,
+            iconActive: AppColors.primary,
+          ),
         ),
       ],
       cardTheme: CardThemeData(
@@ -78,7 +83,11 @@ class AppTheme {
       ),
       extensions: const [
         AppThemeExtension(
-          menu: AppColors.lightMenu,
+          menu: AppMenuTheme(
+            background: AppColors.lightMenu,
+            icon: AppColors.lightIcon,
+            iconActive: AppColors.primary,
+          ),
         ),
       ],
       cardTheme: CardThemeData(

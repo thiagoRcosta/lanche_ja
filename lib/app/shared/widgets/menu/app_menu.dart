@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lanche_ja/app/core/theme/app_colors.dart';
 import 'package:lanche_ja/app/core/theme/app_theme_extension.dart';
 
@@ -7,10 +8,11 @@ class AppMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final menu = Theme.of(context).extension<AppThemeExtension>()!.menu;
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 18),
+      padding: const EdgeInsets.only(top: 14, bottom: 18),
       decoration: BoxDecoration(
-        color: Theme.of(context).extension<AppThemeExtension>()!.menu,
+        color: menu.background,
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
@@ -24,11 +26,39 @@ class AppMenu extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
-          Icon(Icons.home, color: Colors.white),
-          Icon(Icons.lunch_dining, color: Colors.white),
-          Icon(Icons.local_pizza, color: Colors.white),
-          Icon(Icons.water, color: Colors.white),
+        children: [
+          SvgPicture.asset(
+            'assets/icons/home.svg',
+            height: 24,
+            colorFilter: ColorFilter.mode(
+              menu.icon,
+              BlendMode.srcIn,
+            ),
+          ),
+          SvgPicture.asset(
+            'assets/icons/burger.svg',
+            height: 24,
+            colorFilter: ColorFilter.mode(
+              menu.icon,
+              BlendMode.srcIn,
+            ),
+          ),
+          SvgPicture.asset(
+            'assets/icons/hot_dog.svg',
+            height: 24,
+            colorFilter: ColorFilter.mode(
+              menu.icon,
+              BlendMode.srcIn,
+            ),
+          ),
+          SvgPicture.asset(
+            'assets/icons/drink.svg',
+            height: 28,
+            colorFilter: ColorFilter.mode(
+              menu.icon,
+              BlendMode.srcIn,
+            ),
+          ),
         ],
       ),
     );

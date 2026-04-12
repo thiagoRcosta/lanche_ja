@@ -19,6 +19,6 @@ class AppColors {
   static const lightBackground = Color(0xFFF7F7F7);
   static const lightSurface = Color(0xFFE7E7E7);
   static const lightText = Color(0xFF797979);
-  static const lightIcon = Color(0xFFEAEAEA);
+  static const lightIcon = Color(0xFF9D9D9D);
   static const lightMenu = Color(0xFFDEDEDE);
 }
