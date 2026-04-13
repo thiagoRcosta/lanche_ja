@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:lanche_ja/app/features/product/viewmodels/product_view_model.dart';
-import 'package:lanche_ja/app/shared/widgets/menu/app_menu.dart';
+import 'package:lanche_ja/app/shared/widgets/menu/menu.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lanche_ja/app/core/theme/app_theme.dart';
 
-import 'package:lanche_ja/app/shared/widgets/app_button.dart';
-import 'package:lanche_ja/app/shared/widgets/app_error.dart';
+import 'package:lanche_ja/app/shared/widgets/button.dart';
+import 'package:lanche_ja/app/shared/widgets/error.dart';
 import 'package:lanche_ja/app/shared/widgets/app_text_button.dart';
 import 'package:lanche_ja/app/shared/widgets/app_loading.dart';
 
-import 'package:lanche_ja/app/features/product/widgets/app_product_card_list.dart';
+import 'package:lanche_ja/app/features/product/widgets/product_card_list.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -44,7 +44,7 @@ class App extends StatelessWidget {
                     bottom: 64.0,
                   ),
                   children: [
-                    AppButton(
+                    Button(
                       onPressed: () {},
                       icon: Icons.shopping_cart,
                       text: 'Teste',
@@ -52,7 +52,7 @@ class App extends StatelessWidget {
 
                     const SizedBox(height: 20),
 
-                    const AppProductCardList(
+                    const ProductCardList(
                       image: 'assets/images/x_salada.png',
                       title: 'X-Salada',
                       description: 'Acompanha Fritas e molho da casa',
@@ -61,7 +61,7 @@ class App extends StatelessWidget {
 
                     const SizedBox(height: 20),
 
-                    const AppProductCardList(
+                    const ProductCardList(
                       image: 'assets/images/cheddar.png',
                       title: 'Duplo Cheddar',
                       description: 'Acompanha Fritas e molho da casa',
@@ -71,7 +71,7 @@ class App extends StatelessWidget {
 
                     const SizedBox(height: 20),
 
-                    const AppErrorWidget(
+                    const Error(
                       message: 'Ops, algo deu errado!',
                     ),
 
@@ -91,8 +91,8 @@ class App extends StatelessWidget {
               const Positioned(
                 left: 0,
                 right: 0,
-                bottom: 20,
-                child: AppMenu(),
+                bottom: 16,
+                child: Menu(),
               ),
             ],
           ),

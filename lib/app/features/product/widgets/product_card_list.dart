@@ -6,14 +6,14 @@ import 'package:provider/provider.dart';
 import 'package:lanche_ja/app/core/theme/app_text_styles.dart';
 import 'package:lanche_ja/app/features/product/widgets/add_to_cart_component_vertical.dart';
 
-class AppProductCardList extends StatelessWidget {
+class ProductCardList extends StatelessWidget {
   final String image;
   final String title;
   final String? description;
   final double price;
   final bool? backgroundSwitch;
 
-  const AppProductCardList({
+  const ProductCardList({
     super.key,
     required this.image,
     required this.title,
