@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lanche_ja/app/core/theme/app_colors.dart';
+import 'package:lanche_ja/app/core/theme/app_menu_theme.dart';
 import 'package:lanche_ja/app/core/theme/app_theme_extension.dart';
+import 'package:lanche_ja/app/features/home/views/home_screen.dart';
+import 'package:lanche_ja/app/features/product/views/burguer_screen.dart';
+import 'package:lanche_ja/app/features/product/views/drink_screen.dart';
+import 'package:lanche_ja/app/features/product/views/hot_dog_screen.dart';
 import 'package:lanche_ja/app/features/product/widgets/checkout_button.dart';
 
 class Menu extends StatelessWidget {
@@ -11,27 +16,42 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final menu = Theme.of(context).extension<AppThemeExtension>()!.menu;
-
     final List<Widget> items = [
-      SvgPicture.asset(
+      _items(
+        context,
+        menu,
         'assets/icons/home.svg',
-        height: 24,
-        colorFilter: ColorFilter.mode(menu.icon, BlendMode.srcIn),
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        ),
       ),
-      SvgPicture.asset(
+      _items(
+        context,
+        menu,
         'assets/icons/burger.svg',
-        height: 24,
-        colorFilter: ColorFilter.mode(menu.icon, BlendMode.srcIn),
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => BurguerScreen()),
+        ),
       ),
-      SvgPicture.asset(
+      _items(
+        context,
+        menu,
         'assets/icons/hot_dog.svg',
-        height: 24,
-        colorFilter: ColorFilter.mode(menu.icon, BlendMode.srcIn),
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HotDogScreen()),
+        ),
       ),
-      SvgPicture.asset(
+      _items(
+        context,
+        menu,
         'assets/icons/drink.svg',
-        height: 28,
-        colorFilter: ColorFilter.mode(menu.icon, BlendMode.srcIn),
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DrinkScreen()),
+        ),
       ),
     ];
 
@@ -57,6 +77,22 @@ class Menu extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: items,
+      ),
+    );
+  }
+
+  Widget _items(
+    BuildContext context,
+    AppMenuTheme menu,
+    String icon,
+    VoidCallback? redirect,
+  ) {
+    return InkWell(
+      onTap: redirect,
+      child: SvgPicture.asset(
+        icon,
+        height: 24,
+        colorFilter: ColorFilter.mode(menu.icon, BlendMode.srcIn),
       ),
     );
   }
