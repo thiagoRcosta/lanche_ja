@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lanche_ja/app/features/product/viewmodels/product_view_model.dart';
-import 'package:lanche_ja/app/shared/widgets/menu/menu.dart';
+import 'package:lanche_ja/app/shared/widgets/menu/app_menu.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lanche_ja/app/core/theme/app_theme.dart';
@@ -92,7 +92,7 @@ class App extends StatelessWidget {
                 left: 0,
                 right: 0,
                 bottom: 16,
-                child: Menu(),
+                child: AppMenu(),
               ),
             ],
           ),
