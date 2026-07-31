@@ -6,7 +6,7 @@ import 'package:lanche_ja/app/core/theme/app_menu_theme.dart';
 import 'package:lanche_ja/app/core/theme/app_theme_extension.dart';
 
 import 'package:lanche_ja/app/features/home/views/home_screen.dart';
-import 'package:lanche_ja/app/features/product/views/burguer_screen.dart';
+import 'package:lanche_ja/app/features/product/views/burger_screen.dart';
 import 'package:lanche_ja/app/features/product/views/drink_screen.dart';
 import 'package:lanche_ja/app/features/product/views/hot_dog_screen.dart';
 
