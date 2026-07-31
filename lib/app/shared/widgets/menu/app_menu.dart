@@ -5,10 +5,7 @@ import 'package:lanche_ja/app/core/theme/app_colors.dart';
 import 'package:lanche_ja/app/core/theme/app_menu_theme.dart';
 import 'package:lanche_ja/app/core/theme/app_theme_extension.dart';
 
-import 'package:lanche_ja/app/features/home/views/home_screen.dart';
-import 'package:lanche_ja/app/features/product/views/burger_screen.dart';
-import 'package:lanche_ja/app/features/product/views/drink_screen.dart';
-import 'package:lanche_ja/app/features/product/views/hot_dog_screen.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:lanche_ja/app/features/product/widgets/checkout_button.dart';
 
@@ -28,37 +25,25 @@ class AppMenu extends StatelessWidget {
       _buildItem(
         menu,
         icon: 'assets/icons/home.svg',
-        onTap: () => _navigateTo(
-          context,
-          const HomeScreen(),
-        ),
+        onTap: () => _pushIfNotCurrent(context, '/'),
       ),
 
       _buildItem(
         menu,
         icon: 'assets/icons/burger.svg',
-        onTap: () => _navigateTo(
-          context,
-          const BurguerScreen(),
-        ),
+        onTap: () => _pushIfNotCurrent(context, '/burger'),
       ),
 
       _buildItem(
         menu,
         icon: 'assets/icons/hot_dog.svg',
-        onTap: () => _navigateTo(
-          context,
-          const HotDogScreen(),
-        ),
+        onTap: () => _pushIfNotCurrent(context, '/hot_dog'),
       ),
 
       _buildItem(
         menu,
         icon: 'assets/icons/drink.svg',
-        onTap: () => _navigateTo(
-          context,
-          const DrinkScreen(),
-        ),
+        onTap: () => _pushIfNotCurrent(context, '/drink'),
       ),
     ];
 
@@ -119,15 +104,10 @@ class AppMenu extends StatelessWidget {
     );
   }
 
-  static void _navigateTo(
-    BuildContext context,
-    Widget screen,
-  ) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => screen,
-      ),
-    );
+  static void _pushIfNotCurrent(BuildContext context, String path) {
+    final current = GoRouterState.of(context).uri.toString();
+    if (current != path) {
+      context.push(path);
+    }
   }
 }

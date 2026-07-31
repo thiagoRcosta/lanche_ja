@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BurguerScreen extends StatelessWidget {
-  const BurguerScreen({super.key});
+class BurgerScreen extends StatelessWidget {
+  const BurgerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class BurguerScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Burguer Screen'),
+          Text('Burger Screen'),
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: Text('Voltar'),
